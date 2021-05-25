@@ -3,16 +3,16 @@ public class ContaEspecial extends ContaCorrente{
 associado. Para tanto, adiciona as seguintes modificações:*/
 
 //Atributos:
-protected String nomeGerenteResponsável;
+protected String nomeGerenteResponsavel;
 
 //Métodos Obrigatórios:
 //get/set do nome do gerente;
-public String getNomeGerenteResponsável() {
-    return nomeGerenteResponsável;
+public String getNomeGerenteResponsavel() {
+    return nomeGerenteResponsavel;
 }
 
-public void setNomeGerenteResponsável(String nomeGerenteResponsável) {
-    this.nomeGerenteResponsável = nomeGerenteResponsável;
+public void setNomeGerenteResponsavel(String nomeGerenteResponsavel) {
+    this.nomeGerenteResponsavel = nomeGerenteResponsavel;
 }
 //Modificações no imprimir, para que o nome do gerente seja retornado;
 
@@ -25,8 +25,9 @@ gerente, e o outro construtor recebe todos esses parâmetros e ainda o limite da
 */
 
 //--> Construtor 2
-public ContaEspecial(String numeroConta, String nomeCliente, String cPF, double limite, String nomeGerenteResponsável) {
-    super(numeroConta, nomeCliente, cPF, limite);
-    this.nomeGerenteResponsável = nomeGerenteResponsável;
-}
+public ContaEspecial(String numeroConta, String nomeCliente, String cPF, double saldo, double limite,
+            String nomeGerenteResponsavel) {
+        super(numeroConta, nomeCliente, cPF, saldo, limite);
+        this.nomeGerenteResponsavel = nomeGerenteResponsavel;
+    }
 }
