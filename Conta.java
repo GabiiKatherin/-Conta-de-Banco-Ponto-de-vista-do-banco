@@ -8,6 +8,8 @@ public abstract class Conta{
     //--> Condição pra validar 11 digitos
     protected double saldo; 
 
+    protected String s;
+
 //Todos os atributos deverão ter get, porém o saldo, o número da conta
 //CPF não poderão ter sets públicos
     public String getNumeroConta() {
@@ -41,8 +43,7 @@ public abstract class Conta{
     //--> E valida se é possível efetuar o saque
     //--> Retorna true, se for.
 public boolean sacar(double valorSacado){
-    
-    if ((saldo-valorSacado)>=0){
+        if ((saldo-valorSacado)>=0){
         saldo-=valorSacado;
         return true;
     } return false;
@@ -57,14 +58,16 @@ public boolean depositar(double valorDepositado){
 }
 
 public String imprimir(){
-    return CPF;
+    s = String.valueOf(saldo);
+    return s;
+//Converter de Double pra String e dar um imprimir saldo
 }
 
 //Construtor: que receba o número da conta, nome do cliente e CPF;
 public Conta(String numeroConta, String nomeCliente, String cPF, double saldo) {
     this.numeroConta = numeroConta;
     this.nomeCliente = nomeCliente;
-    this.saldo = saldo;
+    this.saldo = 0;
     CPF = cPF;
 }
 }
