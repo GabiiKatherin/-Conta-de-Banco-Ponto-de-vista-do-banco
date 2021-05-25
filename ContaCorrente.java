@@ -6,7 +6,9 @@ protected double limite;
 
 //Métodos obrigatórios:
 public boolean usandoLimite(){
-    return true;
+    if (saldo<0){
+        return true;
+    } return false;
     //--> Condição: Retorna true se o cliente estiver utilizando o limite (saldo negativo)
     //-->e false em caso contrário;
 }
@@ -27,7 +29,8 @@ public boolean sacar(double valor) {
 
 
 //Construtor 2 que recebe os mesmos parâmetros mais o limite da conta.
-public ContaCorrente(String string, String nomeCliente, String string2, double saldo) {
-    super(string, nomeCliente, string2, saldo);
+public ContaCorrente(String numeroConta, String nomeCliente, String cPF, double saldo, double limite) {
+    super(numeroConta, nomeCliente, cPF, saldo);
+    this.limite = limite;
 }
 }

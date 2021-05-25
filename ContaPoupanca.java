@@ -1,4 +1,4 @@
-public class ContaPoupança extends Conta {
+public class ContaPoupanca extends Conta {
 
    // Classe conta poupança: Herda a classe conta, e não adiciona atributos.
    
@@ -10,7 +10,7 @@ public class ContaPoupança extends Conta {
         //--> rendimento anual de 2,45%, o que equivale a 0,20% ao mês
     }
 
-    public ContaPoupança(String numeroConta, String nomeCliente, String cPF, double saldo) {
+    public ContaPoupanca(String numeroConta, String nomeCliente, String cPF, double saldo) {
         super(numeroConta, nomeCliente, cPF, saldo);
     }
 }
