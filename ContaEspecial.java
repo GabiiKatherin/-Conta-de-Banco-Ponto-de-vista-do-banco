@@ -3,7 +3,7 @@ public class ContaEspecial extends ContaCorrente{
 associado. Para tanto, adiciona as seguintes modificações:*/
 
 //Atributos:
-protected String nomeGerenteResponsavel;
+protected String nomeGerenteResponsavel = "Victor";
 
 //Métodos Obrigatórios:
 //get/set do nome do gerente;
@@ -15,16 +15,19 @@ public void setNomeGerenteResponsavel(String nomeGerenteResponsavel) {
     this.nomeGerenteResponsavel = nomeGerenteResponsavel;
 }
 //Modificações no imprimir, para que o nome do gerente seja retornado;
+@Override
+public String imprimir() {
+    return new String("saldo: " + String.valueOf(this.saldo) + " - limite: " + String.valueOf(this.limite)) + "Nome do gerente: " + nomeGerenteResponsavel;
+}
+//Construtor: adiciona o nome do gerente aos dois construtores da classe conta corrente.
 
-//--> Construtor 1:
+//--> Contrutor 1: um construtor recebe os parâmetros necessários à classe conta, + o gerente.
+public ContaEspecial(String numeroConta, String nomeCliente, String cPF, double saldo, String nomeGerenteResponsavel){
+    super(numeroConta, nomeCliente, cPF, saldo);
+    this.nomeGerenteResponsavel = nomeGerenteResponsavel;
+}
 
-/*Construtor:
- adiciona o nome do gerente aos dois construtores da classe conta corrente – ou 
-seja, um construtor recebe os três parâmetros necessários à classe conta, mais o nome do 
-gerente, e o outro construtor recebe todos esses parâmetros e ainda o limite da conta;
-*/
-
-//--> Construtor 2
+//--> Construtor 2: recebe todos esses parâmetros e ainda o limite da conta;
 public ContaEspecial(String numeroConta, String nomeCliente, String cPF, double saldo, double limite,
             String nomeGerenteResponsavel) {
         super(numeroConta, nomeCliente, cPF, saldo, limite);
